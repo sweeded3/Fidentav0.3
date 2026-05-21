@@ -2,6 +2,20 @@
   const nav = document.querySelector('.nav');
   const inner = document.querySelector('.nav-inner');
   const links = document.querySelectorAll('.links a');
+  const cta = document.querySelector('.nav-cta .btn');
+
+  if (cta) {
+    const path = window.location.pathname.toLowerCase();
+    const isLk = path.endsWith('/lk.html') || path.includes('/lk.html');
+
+    if (isLk) {
+      cta.textContent = 'Обсудить проект';
+      cta.setAttribute('href', '#contact');
+    } else {
+      cta.textContent = 'Войти в ЛК';
+      cta.setAttribute('href', 'lk.html');
+    }
+  }
 
   if (!nav || !inner) return;
 
