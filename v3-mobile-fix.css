@@ -1,11 +1,12 @@
-/* V3 mobile menu and photo-block fix */
+/* V3 shared mobile fix: index + invest + lk */
+
 @media (max-width: 1050px) {
   .nav {
     position: sticky !important;
     top: 0 !important;
-    z-index: 80 !important;
+    z-index: 90 !important;
     overflow: visible !important;
-    background: rgba(246,241,232,.92) !important;
+    background: rgba(246,241,232,.94) !important;
     backdrop-filter: blur(18px) saturate(1.06) !important;
     -webkit-backdrop-filter: blur(18px) saturate(1.06) !important;
   }
@@ -22,6 +23,10 @@
   .brand img {
     width: 184px !important;
     max-width: 52vw !important;
+  }
+
+  .nav-cta {
+    margin-left: auto !important;
   }
 
   .nav-cta .btn {
@@ -69,7 +74,7 @@
     grid-template-columns: 1fr !important;
     gap: 0 !important;
     padding: 14px 18px !important;
-    background: linear-gradient(180deg, rgba(250,246,238,.96), rgba(240,231,217,.94)) !important;
+    background: linear-gradient(180deg, rgba(250,246,238,.97), rgba(240,231,217,.95)) !important;
     border: 1px solid rgba(216,203,184,.96) !important;
     border-radius: 28px !important;
     box-shadow: 0 24px 60px rgba(25,26,23,.14), inset 0 1px 0 rgba(255,255,255,.62) !important;
@@ -79,7 +84,7 @@
     pointer-events: none !important;
     transform: translateY(-8px) !important;
     transition: opacity .22s ease, transform .22s ease !important;
-    z-index: 90 !important;
+    z-index: 100 !important;
   }
 
   .nav.is-v3-open .links {
@@ -104,16 +109,19 @@
 @media (max-width: 620px) {
   .nav-inner {
     height: 66px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 
   .brand img {
     width: 166px !important;
-    max-width: 50vw !important;
+    max-width: 48vw !important;
   }
 
   .nav-cta .btn {
     min-height: 36px !important;
     padding: 0 12px !important;
+    font-size: 12px !important;
   }
 
   .nav-inner::after {
@@ -124,30 +132,38 @@
   }
 }
 
-/* Fix shifted photo / dark overlay block */
+/* Mobile sections: remove double navigation and giant cropped panels */
 @media (max-width: 1050px) {
   .dark-glass {
     padding-top: 0 !important;
   }
 
-  .services-grid {
+  .services-grid,
+  .thesis-grid,
+  .feature-grid {
     grid-template-columns: 1fr !important;
     border: 0 !important;
     gap: 14px !important;
   }
 
-  .service {
+  .service,
+  .thesis,
+  .feature {
     min-height: auto !important;
     padding: 28px 24px !important;
     border: 1px solid rgba(245,241,234,.14) !important;
     transform: none !important;
   }
 
-  .service:hover {
+  .service:hover,
+  .thesis:hover,
+  .feature:hover {
     transform: none !important;
   }
 
-  .service h3 {
+  .service h3,
+  .thesis h3,
+  .feature h3 {
     margin-right: 0 !important;
     font-size: clamp(30px, 8vw, 42px) !important;
     line-height: 1.04 !important;
@@ -158,83 +174,119 @@
   }
 }
 
-/* Photo cards: softer crop and smaller overlays */
+/* Photo cards: index + invest + lk */
 @media (max-width: 760px) {
   .visual,
-  .object {
+  .invest-visual,
+  .cabinet-shot,
+  .request-card,
+  .object,
+  .asset,
+  .object-card {
     min-height: 360px !important;
-    border-radius: 22px !important;
+    border-radius: 0 !important;
   }
 
   .visual img,
-  .object img {
+  .invest-visual img,
+  .cabinet-shot img,
+  .request-card img,
+  .object img,
+  .asset img,
+  .object-card img {
     object-position: center !important;
     filter: saturate(.78) contrast(.96) brightness(.94) !important;
   }
 
   .visual:after,
-  .object:after {
-    background: linear-gradient(180deg, rgba(13,13,15,.02), rgba(13,13,15,.28)) !important;
+  .invest-visual:after,
+  .cabinet-shot:after,
+  .request-card:after,
+  .object:after,
+  .asset:after,
+  .object-card:after {
+    background: linear-gradient(180deg, rgba(13,13,15,.02), rgba(13,13,15,.34)) !important;
   }
 
   .glass-panel,
-  .object-info {
+  .deal-card,
+  .mini-ledger,
+  .request-inner,
+  .object-info,
+  .asset-info {
     left: 16px !important;
     right: 16px !important;
     bottom: 16px !important;
     padding: 16px !important;
-    background: rgba(20,23,20,.72) !important;
+    background: rgba(20,23,20,.74) !important;
     backdrop-filter: blur(14px) saturate(1.08) !important;
     -webkit-backdrop-filter: blur(14px) saturate(1.08) !important;
     max-height: calc(100% - 32px) !important;
     overflow: hidden !important;
   }
 
-  .glass-panel-top {
+  .glass-panel-top,
+  .deal-top {
     display: block !important;
     margin-bottom: 18px !important;
   }
 
-  .signal {
+  .signal,
+  .deal-stamp {
     display: none !important;
   }
 
   .glass-panel h3,
-  .object-info h3 {
+  .deal-card h3,
+  .object-info h3,
+  .asset-info h3,
+  .request-inner h3 {
     font-size: clamp(24px, 7vw, 30px) !important;
     line-height: 1.04 !important;
     margin: 6px 0 0 !important;
   }
 
-  .panel-row {
+  .panel-row,
+  .deal-row {
     grid-template-columns: 1fr !important;
     gap: 0 !important;
   }
 
-  .panel-row div {
+  .panel-row div,
+  .deal-row div {
     padding: 12px 0 !important;
     border-right: 0 !important;
     border-bottom: 1px solid rgba(245,241,234,.12) !important;
   }
 
-  .panel-row div:last-child {
+  .panel-row div:last-child,
+  .deal-row div:last-child {
     border-bottom: 0 !important;
   }
 
-  .panel-row b {
+  .panel-row b,
+  .deal-row b {
     font-size: 20px !important;
   }
 }
 
 @media (max-width: 520px) {
   .visual,
-  .object {
+  .invest-visual,
+  .cabinet-shot,
+  .request-card,
+  .object,
+  .asset,
+  .object-card {
     min-height: 330px !important;
   }
 
   .glass-panel,
-  .object-info {
-    position: absolute !important;
+  .deal-card,
+  .mini-ledger,
+  .request-inner,
+  .object-info,
+  .asset-info {
     left: 14px !important;
     right: 14px !important;
     bottom: 14px !important;
@@ -242,34 +294,78 @@
   }
 
   .glass-panel h3,
-  .object-info h3 {
+  .deal-card h3,
+  .object-info h3,
+  .asset-info h3,
+  .request-inner h3 {
     font-size: 24px !important;
   }
 }
 
-/* Owner KPI/dashboard block */
+/* Dashboard / cabinet blocks */
 @media (max-width: 760px) {
-  .cabinet {
+  .cabinet,
+  .cabinet-grid,
+  .docs-layout,
+  .risk-layout,
+  .layout {
     grid-template-columns: 1fr !important;
     gap: 28px !important;
   }
 
-  .screen {
+  .screen,
+  .cabinet-shell,
+  .allocation {
     padding: 18px !important;
     border-radius: 24px !important;
   }
 
-  .dash-row {
+  .dash-row,
+  .dash-grid,
+  .kpi-grid,
+  .asset-row {
     grid-template-columns: 1fr !important;
   }
 
   .dash-card,
-  .dash-card.large {
+  .dash-card.large,
+  .kpi,
+  .asset-mini {
     min-height: auto !important;
   }
 
-  .cabinet-text h2 {
+  .cabinet-text h2,
+  .cabinet-copy h2,
+  .docs-panel h2,
+  .risk-panel h2 {
     font-size: clamp(36px, 10vw, 46px) !important;
     line-height: 1 !important;
+  }
+}
+
+/* Footer: consistent compact mobile view */
+@media (max-width: 760px) {
+  .footer-inner,
+  .footer-wrap {
+    padding: 34px 20px 24px !important;
+  }
+
+  .footer-top,
+  .footer-main,
+  .footer-grid,
+  .footer-bottom {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .footer-col {
+    min-height: auto !important;
+    padding: 18px !important;
+  }
+
+  .footer .brand img,
+  .footer-brand img {
+    width: 184px !important;
   }
 }
