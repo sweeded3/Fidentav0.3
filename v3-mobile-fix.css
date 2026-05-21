@@ -4,6 +4,7 @@
     position: sticky !important;
     top: 0 !important;
     z-index: 80 !important;
+    overflow: visible !important;
   }
 
   .nav-inner {
@@ -12,6 +13,7 @@
     align-items: center !important;
     justify-content: space-between !important;
     gap: 12px !important;
+    position: relative !important;
   }
 
   .brand img {
@@ -27,7 +29,6 @@
     white-space: nowrap !important;
   }
 
-  .links,
   .phone,
   .mobile-nav {
     display: none !important;
@@ -47,6 +48,48 @@
     color: #171815;
     font-size: 24px;
     line-height: 1;
+    cursor: pointer;
+  }
+
+  .nav.is-v3-open .nav-inner::after {
+    content: "×";
+    font-size: 30px;
+  }
+
+  .links {
+    position: absolute !important;
+    left: 20px !important;
+    right: 20px !important;
+    top: calc(100% + 10px) !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    padding: 10px 16px !important;
+    background: rgba(246,241,232,.98) !important;
+    border: 1px solid rgba(216,203,184,.9) !important;
+    box-shadow: 0 24px 60px rgba(25,26,23,.14) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: translateY(-8px) !important;
+    transition: opacity .22s ease, transform .22s ease !important;
+    z-index: 90 !important;
+  }
+
+  .nav.is-v3-open .links {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+
+  .links a {
+    padding: 13px 0 !important;
+    border-bottom: 1px solid rgba(25,26,23,.1) !important;
+    color: #171815 !important;
+    font-size: 15px !important;
+  }
+
+  .links a:last-child {
+    border-bottom: 0 !important;
   }
 }
 
