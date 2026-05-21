@@ -1,0 +1,161 @@
+/* V3 mobile menu and photo-block fix */
+@media (max-width: 1050px) {
+  .nav {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 80 !important;
+  }
+
+  .nav-inner {
+    height: 72px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+  }
+
+  .brand img {
+    width: 184px !important;
+    max-width: 52vw !important;
+  }
+
+  .nav-cta .btn {
+    display: inline-flex !important;
+    min-height: 38px !important;
+    padding: 0 14px !important;
+    font-size: 12px !important;
+    white-space: nowrap !important;
+  }
+
+  .links,
+  .phone,
+  .mobile-nav {
+    display: none !important;
+  }
+
+  .nav-inner::after {
+    content: "☰";
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(25,26,23,.18);
+    border-radius: 999px;
+    background: rgba(255,255,255,.34);
+    color: #171815;
+    font-size: 24px;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 620px) {
+  .nav-inner {
+    height: 66px !important;
+  }
+
+  .brand img {
+    width: 166px !important;
+    max-width: 50vw !important;
+  }
+
+  .nav-cta .btn {
+    min-height: 36px !important;
+    padding: 0 12px !important;
+  }
+
+  .nav-inner::after {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+    font-size: 22px;
+  }
+}
+
+/* Fix shifted photo / dark overlay block */
+@media (max-width: 1050px) {
+  .dark-glass {
+    padding-top: 0 !important;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr !important;
+    border: 0 !important;
+    gap: 14px !important;
+  }
+
+  .service {
+    min-height: auto !important;
+    padding: 28px 24px !important;
+    border: 1px solid rgba(245,241,234,.14) !important;
+    transform: none !important;
+  }
+
+  .service:hover {
+    transform: none !important;
+  }
+
+  .service h3 {
+    margin-right: 0 !important;
+    font-size: clamp(30px, 8vw, 42px) !important;
+    line-height: 1.04 !important;
+  }
+
+  .icon {
+    display: none !important;
+  }
+}
+
+/* Owner KPI/photo block: keep card inside photo and reduce crop */
+@media (max-width: 760px) {
+  .cabinet {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  .screen {
+    padding: 18px !important;
+    border-radius: 24px !important;
+  }
+
+  .dash-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dash-card,
+  .dash-card.large {
+    min-height: auto !important;
+  }
+
+  .cabinet-text h2 {
+    font-size: clamp(36px, 10vw, 46px) !important;
+    line-height: 1 !important;
+  }
+
+  .object,
+  .visual {
+    min-height: 420px !important;
+  }
+
+  .object-info,
+  .glass-panel {
+    left: 18px !important;
+    right: 18px !important;
+    bottom: 18px !important;
+    padding: 18px !important;
+  }
+
+  .glass-panel-top {
+    margin-bottom: 24px !important;
+  }
+
+  .glass-panel h3,
+  .object-info h3 {
+    font-size: 28px !important;
+  }
+
+  .panel-row {
+    grid-template-columns: 1fr !important;
+  }
+}
