@@ -1,0 +1,39 @@
+name: Update docx footer links
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  update-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update footer links to DOCX
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace('docs/fidenta-kp.pdf', 'docs/fidenta-kp.docx')
+          s = s.replace('docs/fidenta-contract.pdf', 'docs/fidenta-contract.docx')
+          s = s.replace('>Скачать договор<', '>Отправляем договор<')
+          marker = '</div></div></div></footer>'
+          if 'docs/fidenta-kp.docx' not in s and marker in s:
+              links = '<a class="demo-footer-nav__download" href="docs/fidenta-kp.docx" download>Скачать КП</a><a class="demo-footer-nav__download" href="docs/fidenta-contract.docx" download>Отправляем договор</a>'
+              s = s.replace(marker, links + marker, 1)
+          p.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet; then
+            git add index.html
+            git commit -m "Update footer links to DOCX files"
+            git push
+          fi
