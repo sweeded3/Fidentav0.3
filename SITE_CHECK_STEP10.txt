@@ -1,0 +1,8 @@
+index.html: title=Фидента — управление коммерческой недвижимостью, meta_description=True, has_footer=True, has_logo_link=True
+invest.html: title=Фидента — инвестиции в коммерческую недвижимость, meta_description=True, has_footer=True, has_logo_link=True
+lk.html: title=Фидента — личный кабинет инвестора, meta_description=True, has_footer=True, has_logo_link=True
+privacy.html: title=Политика конфиденциальности — Фидента, meta_description=True, has_footer=True, has_logo_link=True
+terms.html: title=Правовая информация — Фидента, meta_description=True, has_footer=True, has_logo_link=True
+consent.html: title=Согласие на обработку данных — Фидента, meta_description=True, has_footer=True, has_logo_link=True
+
+Broken local links: 0
