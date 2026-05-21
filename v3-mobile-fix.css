@@ -150,7 +150,96 @@
   }
 }
 
-/* Owner KPI/photo block: keep card inside photo and reduce crop */
+/* Photo cards: softer crop and smaller overlays */
+@media (max-width: 760px) {
+  .visual,
+  .object {
+    min-height: 360px !important;
+    border-radius: 22px !important;
+  }
+
+  .visual img,
+  .object img {
+    object-position: center !important;
+    filter: saturate(.78) contrast(.96) brightness(.94) !important;
+  }
+
+  .visual:after,
+  .object:after {
+    background: linear-gradient(180deg, rgba(13,13,15,.02), rgba(13,13,15,.28)) !important;
+  }
+
+  .glass-panel,
+  .object-info {
+    left: 16px !important;
+    right: 16px !important;
+    bottom: 16px !important;
+    padding: 16px !important;
+    background: rgba(20,23,20,.72) !important;
+    backdrop-filter: blur(14px) saturate(1.08) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(1.08) !important;
+    max-height: calc(100% - 32px) !important;
+    overflow: hidden !important;
+  }
+
+  .glass-panel-top {
+    display: block !important;
+    margin-bottom: 18px !important;
+  }
+
+  .signal {
+    display: none !important;
+  }
+
+  .glass-panel h3,
+  .object-info h3 {
+    font-size: clamp(24px, 7vw, 30px) !important;
+    line-height: 1.04 !important;
+    margin: 6px 0 0 !important;
+  }
+
+  .panel-row {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  .panel-row div {
+    padding: 12px 0 !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid rgba(245,241,234,.12) !important;
+  }
+
+  .panel-row div:last-child {
+    border-bottom: 0 !important;
+  }
+
+  .panel-row b {
+    font-size: 20px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .visual,
+  .object {
+    min-height: 330px !important;
+  }
+
+  .glass-panel,
+  .object-info {
+    position: absolute !important;
+    left: 14px !important;
+    right: 14px !important;
+    bottom: 14px !important;
+    padding: 14px !important;
+  }
+
+  .glass-panel h3,
+  .object-info h3 {
+    font-size: 24px !important;
+  }
+}
+
+/* Owner KPI/dashboard block */
 @media (max-width: 760px) {
   .cabinet {
     grid-template-columns: 1fr !important;
@@ -174,31 +263,5 @@
   .cabinet-text h2 {
     font-size: clamp(36px, 10vw, 46px) !important;
     line-height: 1 !important;
-  }
-
-  .object,
-  .visual {
-    min-height: 420px !important;
-  }
-
-  .object-info,
-  .glass-panel {
-    left: 18px !important;
-    right: 18px !important;
-    bottom: 18px !important;
-    padding: 18px !important;
-  }
-
-  .glass-panel-top {
-    margin-bottom: 24px !important;
-  }
-
-  .glass-panel h3,
-  .object-info h3 {
-    font-size: 28px !important;
-  }
-
-  .panel-row {
-    grid-template-columns: 1fr !important;
   }
 }
